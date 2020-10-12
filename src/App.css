@@ -11,6 +11,7 @@
 }
 
 #img{
+  display: inline-block;
   width: 25rem;
   height: 25rem;
   margin: 1rem;
@@ -27,11 +28,6 @@
   background-color: yellow;
 } */
 
-/* .u{
-  margin: 1em;
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-} */
 
 .u{
   display: inline-block;
@@ -47,3 +43,6 @@
   margin: 1rem;
 }
 
+/* .fas{
+  position: absolute;
+} */
