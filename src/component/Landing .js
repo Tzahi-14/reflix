@@ -12,7 +12,7 @@ class Landing extends Component {
 
     render() {
         return (
-            <div>
+            <div id="1">
                 <h1 id="title">Who's Watching?</h1>
                 
                 <div className="user">

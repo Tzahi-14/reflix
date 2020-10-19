@@ -49,12 +49,7 @@ export class App extends Component {
     else {
       if (findUser.budget >= 3) {
         findUser.rentedMovie.push(movie)
-        // movie.isRented = true
         findUser.budget -= 3
-        // let movieIsRented = findUser.rentedMovie.map(movie => movie.id === movieId)
-        // movieIsRented.isRented=true
-        // console.log(movieIsRented)
-        // console.log(findUser)
         this.setState({
           users: currentUsers
         }, () => {
@@ -83,42 +78,25 @@ export class App extends Component {
     })
   }
 
-
   componentDidMount() {
     this.searchMovie('')
   }
 
-  // selectMovie = (id) => {
-  //   console.log("hey")
-  //   console.log(id)
-  //   let currentMovie = [...this.state.movies]
-  //   const movie = currentMovie.find(movie => movie.id === id)
-  //   movie.isRented = !movie.isRented
-  //   this.setState({
-  //     movies: currentMovie
-  //   })
-  // }
 
   searchMovie = (str) => {
-    // let currentMovie = [...this.state.movies]
     if (str.length > 0) {
       let include = this.state.movies.filter(movie => movie.title.toLocaleLowerCase().includes(str))
       console.log(include)
       this.setState({
         filteredMovies: include
       })
-      //  return include
     }
     else {
-      // return this.state.movies
       this.setState({
         filteredMovies: this.state.movies
       })
     }
   }
-
-
-
   render() {
     return (
       <Router>
@@ -131,7 +109,6 @@ export class App extends Component {
           <Route exact path="/" render={() => <Landing users={this.state.users} userEntered={this.userEntered} />} />
           <Route exact path="/catalog/:name" render={({ match }) => <Catalog match={match} state={this.state} searchMovie={this.searchMovie} addSelectedMovie={this.addSelectedMovie} removeSelectedMovie={this.removeSelectedMovie} currentUser={this.state.currentUser} />} />
           <Route path="/movies/:id" exact render={({ match }) => <MovieDetail match={match} movies={this.state.movies} />}></Route>
-          {/* <Route path="/movies/:id" exact render={({match}) => <MovieDetail match={match} movies={this.state.movies}/>}></Route> */}
 
         </div>
       </Router>

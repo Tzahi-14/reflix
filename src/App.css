@@ -19,16 +19,12 @@
 
 }
 
-/* .user{
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  padding: 5px;
-  border: 1px solid blue;    
-  background-color: yellow;
-} */
-
-
+#movies {
+  margin: 1em;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  background-color: brown;
+}
 .u{
   display: inline-block;
   width: 20rem;
@@ -42,7 +38,3 @@
 .rented{
   margin: 1rem;
 }
-
-/* .fas{
-  position: absolute;
-} */
